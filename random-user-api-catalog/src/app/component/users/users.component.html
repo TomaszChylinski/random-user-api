@@ -1,9 +1,38 @@
-<div>
+<div class="container">
+  <div>
     <h3>Random User Generator</h3>
 
-         <p>{{userData.info.page}}</p>
-        <p>Results: {{userData.info.result}}</p>
-        <p>{{userData.info.seed}}</p>
-        <p>{{userData.info.version}}</p>
+    <p>Page Number{{ userData.info.page }}</p>
+    <p>Results: {{ userData.info.result }}</p>
+    <p>Seed:{{ userData.info.seed }}</p>
+    <p>Version:{{ userData.info.version }}</p>
 
+    <div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Image</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userData.results">
+            <td scope="row">{{ user.uuid }}</td>
+            <td><img src="{{ user.imageUrl }}" alt="" /></td>
+            <td>{{ user.firstName }} {{ user.lastName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.address }}</td>
+            <td>{{ user.phone }}</td>
+            <td><button
+                [routerLink]="['/user', user.uuid]" class="button btn btn-primary">User</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

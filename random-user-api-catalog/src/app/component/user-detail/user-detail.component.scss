@@ -1,0 +1,28 @@
+.jumbotron {
+    padding-top: 36px;
+
+    &-heading {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    img{
+        width: 150px;
+        height: 150px;
+        border-radius: 25%;
+    }
+}
+
+.user-info {
+    &-item {
+        display: flex;
+    }
+
+    &-input {
+        margin-left: 20px;
+    }
+}
+
+h6 {
+    padding-right: 20px;
+}

@@ -45,7 +45,7 @@ export class UserService {
             imageUrl: user.picture.medium,
             coordinate: {
               latitude: user.location.coordinates.latitude,
-              logitude: user.location.coordinates.logitude,
+              longitude: user.location.coordinates.longitude,
             },
           }
       ),

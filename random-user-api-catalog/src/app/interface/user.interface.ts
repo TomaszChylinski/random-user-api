@@ -9,10 +9,10 @@ export interface User {
   dob: string;
   phone: string;
   imageUrl: string;
-  coordinate?: Coordinate;
+  coordinate: Coordinate;
 }
 
 export interface Coordinate {
-  latitude: string;
-  logitude: string;
+  latitude: number;
+  longitude: number;
 }

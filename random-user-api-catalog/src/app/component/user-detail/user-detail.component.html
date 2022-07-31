@@ -20,7 +20,7 @@
               <h6 class="mb-0">First Name</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              <input
+              <input [disabled]="editMode === 'locked'"
                 type="text"
                 class="form-control"
                 [value]="userInfo.firstName"
@@ -33,7 +33,7 @@
               <h6 class="mb-0">Last Name</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              <input
+              <input [disabled]="editMode === 'locked'"
                 type="text"
                 class="form-control"
                 [value]="userInfo.lastName"
@@ -46,7 +46,7 @@
               <h6 class="mb-0">Date of Birth</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              <input type="text" class="form-control" [value]="userInfo.dob" />
+              <input [disabled]="editMode === 'locked'" type="text" class="form-control" [value]="userInfo.dob" />
             </div>
           </div>
 
@@ -55,7 +55,7 @@
               <h6 class="mb-0">Email</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              <input
+              <input [disabled]="editMode === 'locked'"
                 type="text"
                 class="form-control"
                 [value]="userInfo.email"
@@ -68,7 +68,7 @@
               <h6 class="mb-0">Phone</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              <input
+              <input [disabled]="editMode === 'locked'"
                 type="text"
                 class="form-control"
                 [value]="userInfo.phone"
@@ -81,7 +81,7 @@
               <h6 class="mb-0">Gender</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              <input
+              <input [disabled]="editMode === 'locked'"
                 type="text"
                 class="form-control"
                 [value]="userInfo.gender"
@@ -94,7 +94,7 @@
               <h6 class="mb-0">Phone</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              <input
+              <input [disabled]="editMode === 'locked'"
                 type="text"
                 class="form-control"
                 [value]="userInfo.phone"
@@ -107,7 +107,7 @@
               <h6 class="mb-0">Gender</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              <input
+              <input [disabled]="editMode === 'locked'"
                 type="text"
                 class="form-control"
                 [value]="userInfo.gender"
@@ -120,12 +120,16 @@
               <h6 class="mb-0">Address</h6>
             </div>
             <div class="col-sm-9 text-secondary">
-              <input
+              <input [disabled]="editMode === 'locked'"
                 type="text"
                 class="form-control"
                 [value]="userInfo.address"
               />
             </div>
+          </div>
+
+          <div class="row mb-3">
+            <button (click)="changeMode(editMode)" class="btn btn-primary">{{buttonText}}</button>
           </div>
         </div>
       </div>
@@ -137,6 +141,7 @@
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Location</h1>
+          <div id="map"> </div>
           <p class="lead">
             This is a modified jumbotron that occupies the entire horizontal
             space of its parent.
